@@ -27,7 +27,7 @@ const corsOpts = {
   Credential: true,
   allowedHeaders: ["Content-Type"],
 };
-app.use(cors());
+app.use(cors(corsOpts));
 app.use("/test", (req, res) => {
   res.status(200).json({
     message: "welcome to test",
