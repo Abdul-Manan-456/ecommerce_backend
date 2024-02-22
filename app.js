@@ -8,13 +8,7 @@ const connectDB = require("./config/connnection");
 const routes = require("./config/routes");
 
 const app = express();
-// const corsOpts = {
-//   origin: ["http://localhost:3000", "*"],
-
-//   methods: ["GET", "POST"],
-//   Credential: true,
-//   allowedHeaders: ["Content-Type"],
-// };
+app.use(cors());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();

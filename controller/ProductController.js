@@ -6,8 +6,6 @@ const { logger } = require("../config/winstonLogger");
 
 //======= CREATE ========
 router.post("/", async (req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  console.log("hi from product-------------");
   const reqObj = Object.assign({}, req.body);
 
   productManager
@@ -47,6 +45,8 @@ router.post("/by-variation", async (req, res, next) => {
 // =========== Get All ============
 router.get("/", async (req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
+  console.log("hi from product-------------,header", res);
+
   productManager
     .getAllProduct(req?.query)
     .then((result) => {
