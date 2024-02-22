@@ -26,6 +26,8 @@ class Base {
     app.use(express.static("public"));
     app.use((req, res, next) => {
       res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+      req.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+
       res.removeHeader("x-powered-by");
       res.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,OPTIONS");
       res.setHeader("Access-Control-Allow-Headers", "Content-Type");
