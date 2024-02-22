@@ -11,6 +11,11 @@ const app = express();
 
 app.use(helmet());
 app.use(cors());
+app.use("/test", (req, res) => {
+  res.status(200).json({
+    message: "welcome to test",
+  });
+});
 require("./middlewares/Base").init(app);
 require("./modules/sockets/socket").socketServer(app);
 connectDB();
