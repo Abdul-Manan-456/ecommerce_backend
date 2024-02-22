@@ -10,12 +10,21 @@ const routes = require("./config/routes");
 const app = express();
 
 app.use(helmet());
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://localhost:3000"],
-    credentials: false,
-  })
-);
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+// app.use(
+//   cors({
+//     origin: ["http://localhost:3000", "https://localhost:3000"],
+//     credentials: false,
+//   })
+// );
 app.use("/test", (req, res) => {
   res.status(200).json({
     message: "welcome to test",
