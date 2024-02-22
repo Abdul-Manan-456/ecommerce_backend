@@ -10,7 +10,11 @@ const routes = require("./config/routes");
 const app = express();
 
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use("/test", (req, res) => {
   res.status(200).json({
     message: "welcome to test",
