@@ -19,12 +19,13 @@ class Base {
       api_key: "483979789592513",
       api_secret: "Dvi6wEK-c-_ZqEMnc3A4x9YQ_MA",
     });
+
     app.use(bodyParser.json({ limit: "5mb" }));
     app.use(bodyParser.urlencoded({ limit: "5mb", extended: false }));
     app.use(cookieParser());
     app.use(express.static("public"));
     app.use((req, res, next) => {
-      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
       res.removeHeader("x-powered-by");
       res.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,OPTIONS");
       res.setHeader("Access-Control-Allow-Headers", "Content-Type");
