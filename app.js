@@ -28,8 +28,12 @@ app.use(helmet());
 // });
 
 app.use("/test", (req, res) => {
+  const header = req.header;
+  const url = req.url;
   res.status(200).json({
     message: "welcome to test",
+    header,
+    url,
   });
 });
 require("./middlewares/Base").init(app);
