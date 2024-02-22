@@ -12,7 +12,8 @@ const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:3000",
+    credentials: false,
   })
 );
 app.use("/test", (req, res) => {
