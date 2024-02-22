@@ -19,12 +19,14 @@ app.use((req, res, next) => {
   );
   next();
 });
-// app.use(
-//   cors({
-//     origin: ["http://localhost:3000", "https://localhost:3000"],
-//     credentials: false,
-//   })
-// );
+const corsOpts = {
+  origin: "*",
+
+  methods: ["GET", "POST"],
+
+  allowedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOpts));
 app.use("/test", (req, res) => {
   res.status(200).json({
     message: "welcome to test",
