@@ -6,6 +6,7 @@ const { logger } = require("../config/winstonLogger");
 
 //======= CREATE ========
 router.post("/", async (req, res, next) => {
+  console.log("hi from product-------------");
   const reqObj = Object.assign({}, req.body);
 
   productManager
