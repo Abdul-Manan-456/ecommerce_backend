@@ -20,14 +20,14 @@ app.use(helmet());
 //   next();
 // });
 
-// const corsOpts = {
-//   origin: "*",
+const corsOpts = {
+  origin: ["http://localhost:3000"],
 
-//   methods: ["GET", "POST"],
-
-//   allowedHeaders: ["Content-Type"],
-// };
-// app.use(cors());
+  methods: ["GET", "POST"],
+  Credential: true,
+  allowedHeaders: ["Content-Type"],
+};
+app.use(cors());
 app.use("/test", (req, res) => {
   res.status(200).json({
     message: "welcome to test",
