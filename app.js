@@ -10,16 +10,13 @@ const routes = require("./config/routes");
 //   "https://ecommerce-frontend-beta-two.vercel.app",
 //   "http://ecommerce-frontend-beta-two.vercel.app",
 // ]
+
 const app = express();
 app.use(
   cors({
     origin: true,
   })
 );
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
 app.use(helmet());
 
 app.use("/test", (req, res) => {
