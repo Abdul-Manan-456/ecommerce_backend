@@ -24,12 +24,13 @@ app.use((req, res, next) => {
 app.use(helmet());
 
 app.use("/test", (req, res) => {
-  const header = req.header;
+  const fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
+
   const url = req.url;
   res.status(200).json({
     message: "welcome to test",
-    header,
-    url,
+    fullUrl: fullUrl,
+    "url----------": url,
   });
 });
 require("./middlewares/Base").init(app);
