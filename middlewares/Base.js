@@ -22,7 +22,7 @@ class Base {
     app.use((req, res, next) => {
       res.header(
         "Access-Control-Allow-Origin",
-        "https://ecommerce-frontend-beta-two.vercel.app/"
+        "http://ecommerce-frontend-beta-two.vercel.app"
       );
       res.setHeader(
         "Access-Control-Allow-Headers",
