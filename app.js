@@ -6,15 +6,14 @@ const helmet = require("helmet");
 const cors = require("cors");
 const connectDB = require("./config/connnection");
 const routes = require("./config/routes");
-
+// const corsOption = [
+//   "https://ecommerce-frontend-beta-two.vercel.app",
+//   "http://ecommerce-frontend-beta-two.vercel.app",
+// ]
 const app = express();
 app.use(
   cors({
-    origin: [
-      "https://ecommerce-frontend-beta-two.vercel.app",
-      "http://ecommerce-frontend-beta-two.vercel.app",
-    ],
-    credentials: true,
+    origin: true,
   })
 );
 app.use((req, res, next) => {
