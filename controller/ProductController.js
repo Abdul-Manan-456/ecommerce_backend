@@ -44,9 +44,6 @@ router.post("/by-variation", async (req, res, next) => {
 
 // =========== Get All ============
 router.get("/", async (req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  console.log("hi from product-------------,header", res);
-
   productManager
     .getAllProduct(req?.query)
     .then((result) => {
