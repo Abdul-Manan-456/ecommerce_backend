@@ -10,7 +10,10 @@ const routes = require("./config/routes");
 const app = express();
 app.use(
   cors({
-    origin: true,
+    origin: [
+      "https://ecommerce-frontend-beta-two.vercel.app",
+      "http://ecommerce-frontend-beta-two.vercel.app",
+    ],
     credentials: true,
   })
 );
